@@ -2,6 +2,12 @@
 import { siteConfig } from "../config";
 const { formacion } = siteConfig;
 
+const formacionEn = [
+  { titulo: "Bachelor's in Business Administration", institucion: "Public University of Navarra (UPNA)" },
+  { titulo: "Master's in Advanced Marketing", institucion: "University of Deusto (DBS)" },
+  { titulo: "Specialization in Marketing Management", institucion: "Business School UEMC" },
+];
+
 const cityIcons: Record<string, string> = {
   "Pamplona": "M3 21l1.65-3.8a9 9 0 1114.7 0L21 21",
   "San Sebastián": "M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75",
@@ -11,33 +17,17 @@ const cityIcons: Record<string, string> = {
 
 <section id="formacion" class="py-16 md:py-24" style="background: var(--color-surface-light);">
   <div class="max-w-4xl mx-auto px-6">
-    <h2 class="reveal text-sm font-bold uppercase tracking-widest mb-10" style="color: var(--color-accent);">
+    <h2 class="reveal text-sm font-bold uppercase tracking-widest mb-10 i18n" data-es="Formación" data-en="Education" style="color: var(--color-accent);">
       Formación
     </h2>
 
     <div class="space-y-5">
       {formacion.map((edu, i) => (
         <div class={`reveal ${i === 0 ? 'reveal-left' : i === 2 ? 'reveal-right' : ''} stagger-${i + 1}`}>
-          <div
-            class="rounded-xl p-5 md:p-6 card-hover flex items-start gap-4"
-            style="background: white; border: 1px solid rgba(61, 90, 128, 0.1);"
-          >
-            <!-- City badge -->
+          <div class="rounded-xl p-5 md:p-6 card-hover flex items-start gap-4" style="background: white; border: 1px solid rgba(61, 90, 128, 0.1);">
             <div class="flex-shrink-0">
-              <div
-                class="w-12 h-12 rounded-lg flex items-center justify-center"
-                style="background: var(--color-surface);"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--color-primary)"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+              <div class="w-12 h-12 rounded-lg flex items-center justify-center" style="background: var(--color-surface);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d={cityIcons[edu.ciudad] || cityIcons["Madrid"]} />
                 </svg>
               </div>
@@ -45,20 +35,17 @@ const cityIcons: Record<string, string> = {
 
             <div class="flex-1 min-w-0">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
-                <span
-                  class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full"
-                  style="background: var(--color-primary-dark); color: white;"
-                >
+                <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full" style="background: var(--color-primary-dark); color: white;">
                   {edu.ciudad}
                 </span>
                 <span class="text-xs font-medium" style="color: var(--color-primary-light);">
                   {edu.periodo}
                 </span>
               </div>
-              <h3 class="text-base font-bold mt-2" style="color: var(--color-primary-dark);">
+              <h3 class="text-base font-bold mt-2 i18n" data-es={edu.institucion} data-en={formacionEn[i].institucion} style="color: var(--color-primary-dark);">
                 {edu.institucion}
               </h3>
-              <p class="text-sm mt-1" style="color: var(--color-primary);">
+              <p class="text-sm mt-1 i18n" data-es={edu.titulo} data-en={formacionEn[i].titulo} style="color: var(--color-primary);">
                 {edu.titulo}
               </p>
             </div>
@@ -67,12 +54,8 @@ const cityIcons: Record<string, string> = {
       ))}
     </div>
 
-    <!-- Seminario extra -->
     <div class="reveal stagger-4 mt-5 text-center">
-      <span
-        class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium"
-        style="background: white; color: var(--color-primary); border: 1px solid var(--color-primary-light);"
-      >
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium i18n" data-es="Seminario: Habilidades directivas y gestión de equipos (Femxa, 65h)" data-en="Seminar: Leadership Skills & Team Management (Femxa, 65h)" style="background: white; color: var(--color-primary); border: 1px solid var(--color-primary-light);">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <polyline points="9 11 12 14 22 4"/>
           <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
@@ -83,5 +66,4 @@ const cityIcons: Record<string, string> = {
   </div>
 </section>
 
-<!-- Shimmer separator -->
 <div class="bar-shimmer h-1"></div>

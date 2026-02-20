@@ -2,6 +2,13 @@
 import { siteConfig } from "../config";
 const { personal } = siteConfig;
 
+const personalEn = [
+  { titulo: "Multicultural", descripcion: "From Peru to Spain — growing between two cultures gave me a global perspective and adaptability." },
+  { titulo: "Creative by nature", descripcion: "I look for the different idea, the approach no one tried. Every campaign is a chance to innovate." },
+  { titulo: "Explorer", descripcion: "Pamplona, San Sebastián, Madrid and back — each city taught me something new about myself." },
+  { titulo: "Lifelong learner", descripcion: "Seminars, certifications, market trends — I never stop growing." },
+];
+
 const personalIcons: Record<string, string> = {
   "globe": "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z",
   "spark": "M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z",
@@ -12,10 +19,10 @@ const personalIcons: Record<string, string> = {
 
 <section id="personal" class="py-16 md:py-24" style="background: var(--color-surface);">
   <div class="max-w-4xl mx-auto px-6">
-    <h2 class="reveal text-sm font-bold uppercase tracking-widest mb-3" style="color: var(--color-accent);">
+    <h2 class="reveal text-sm font-bold uppercase tracking-widest mb-3 i18n" data-es="Más Allá del Marketing" data-en="Beyond Marketing" style="color: var(--color-accent);">
       Más Allá del Marketing
     </h2>
-    <p class="reveal stagger-1 text-base mb-10" style="color: var(--color-primary);">
+    <p class="reveal stagger-1 text-base mb-10 i18n" data-es="Lo que me define fuera de la oficina." data-en="What defines me outside the office." style="color: var(--color-primary);">
       Lo que me define fuera de la oficina.
     </p>
 
@@ -25,29 +32,16 @@ const personalIcons: Record<string, string> = {
           class={`reveal-scale stagger-${i + 1} rounded-xl p-6 card-hover`}
           style="background: white; border: 1px solid rgba(212, 132, 90, 0.15);"
         >
-          <!-- Icon circle -->
-          <div
-            class="w-12 h-12 rounded-full flex items-center justify-center mb-4"
-            style="background: linear-gradient(135deg, var(--color-accent), var(--color-primary-light)); opacity: 0.9;"
-          >
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--color-accent), var(--color-primary-light)); opacity: 0.9;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d={personalIcons[item.icon] || personalIcons["spark"]} />
             </svg>
           </div>
 
-          <h3 class="text-base font-bold mb-2" style="color: var(--color-primary-dark);">
+          <h3 class="text-base font-bold mb-2 i18n" data-es={item.titulo} data-en={personalEn[i].titulo} style="color: var(--color-primary-dark);">
             {item.titulo}
           </h3>
-          <p class="text-sm leading-relaxed" style="color: #666;">
+          <p class="text-sm leading-relaxed i18n" data-es={item.descripcion} data-en={personalEn[i].descripcion} style="color: #666;">
             {item.descripcion}
           </p>
         </div>

@@ -5,18 +5,18 @@ const { perfil } = siteConfig;
 
 <section id="perfil" class="py-16 md:py-24" style="background: var(--color-surface);">
   <div class="max-w-4xl mx-auto px-6">
-    <h2 class="reveal text-sm font-bold uppercase tracking-widest mb-8" style="color: var(--color-accent);">
+    <h2 class="reveal text-sm font-bold uppercase tracking-widest mb-8 i18n" data-es="Perfil" data-en="Profile" style="color: var(--color-accent);">
       Perfil
     </h2>
 
     <div class="reveal stagger-1">
-      <p class="text-lg md:text-xl leading-relaxed" style="color: var(--color-primary-dark);">
+      <p class="text-lg md:text-xl leading-relaxed i18n" data-es="Brand Manager con más de 3 años de experiencia en marketing 360°, gestión de marca, desarrollo de campañas on/offline y coordinación con equipos multidisciplinares en entornos B2B y B2C." data-en="Brand Manager with 3+ years of experience in 360° marketing, brand management, on/offline campaign development, and coordination with multidisciplinary teams in B2B and B2C environments." style="color: var(--color-primary-dark);">
         {perfil.intro}
       </p>
     </div>
 
     <div class="reveal stagger-2 mt-8">
-      <p class="text-base leading-relaxed" style="color: #555;">
+      <p class="text-base leading-relaxed i18n" data-es="He gestionado campañas digitales y tradicionales, comunicación corporativa, eventos, SEO/SEM, redes sociales, analítica, generación de contenidos y branding. Destaco por mi proactividad, creatividad y capacidad de planificación, así como por mi experiencia coordinando diferentes departamentos — ventas, producto, digital y agencias externas." data-en="I have managed digital and traditional campaigns, corporate communications, events, SEO/SEM, social media, analytics, content creation, and branding. I stand out for my proactivity, creativity, and planning skills, as well as my experience coordinating across departments — sales, product, digital, and external agencies." style="color: #555;">
         {perfil.detalle}
       </p>
     </div>
@@ -27,7 +27,7 @@ const { perfil } = siteConfig;
         class="quote-float relative pl-6 py-4 border-l-4"
         style="border-color: var(--color-accent);"
       >
-        <p class="text-lg md:text-xl italic font-medium" style="color: var(--color-primary);">
+        <p class="text-lg md:text-xl italic font-medium i18n" data-es="Busco aportar estrategias de valor en una empresa dinámica donde pueda seguir creciendo." data-en="I seek to bring strategic value to a dynamic company where I can continue growing." style="color: var(--color-primary);">
           &ldquo;{perfil.quote.text}&rdquo;
         </p>
         <cite class="mt-3 block text-sm font-semibold not-italic" style="color: var(--color-accent);">
@@ -38,19 +38,32 @@ const { perfil } = siteConfig;
 
     <!-- Languages -->
     <div class="reveal stagger-4 mt-10 flex flex-wrap gap-3">
-      {siteConfig.idiomas.map((lang) => (
-        <span
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
-          style="background: white; color: var(--color-primary-dark); border: 1px solid var(--color-primary-light);"
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M2 12h20"/>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
-          {lang.idioma} — {lang.nivel}
-        </span>
-      ))}
+      <span
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium i18n"
+        data-es="Español — Nativo"
+        data-en="Spanish — Native"
+        style="background: white; color: var(--color-primary-dark); border: 1px solid var(--color-primary-light);"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        Español — Nativo
+      </span>
+      <span
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium i18n"
+        data-es="Inglés — Intermedio (Cambridge B2)"
+        data-en="English — Intermediate (Cambridge B2)"
+        style="background: white; color: var(--color-primary-dark); border: 1px solid var(--color-primary-light);"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        Inglés — Intermedio (Cambridge B2)
+      </span>
     </div>
   </div>
 </section>

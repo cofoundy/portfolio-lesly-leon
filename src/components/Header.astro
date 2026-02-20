@@ -1,12 +1,12 @@
 ---
 import { siteConfig } from "../config";
 const sections = [
-  { id: "perfil", label: "Perfil" },
-  { id: "trayectoria", label: "Trayectoria" },
-  { id: "toolkit", label: "Toolkit" },
-  { id: "formacion", label: "Formación" },
-  { id: "personal", label: "Sobre Mí" },
-  { id: "contacto", label: "Contacto" },
+  { id: "perfil", labelEs: "Perfil", labelEn: "Profile" },
+  { id: "trayectoria", labelEs: "Trayectoria", labelEn: "Experience" },
+  { id: "toolkit", labelEs: "Toolkit", labelEn: "Toolkit" },
+  { id: "formacion", labelEs: "Formación", labelEn: "Education" },
+  { id: "personal", labelEs: "Sobre Mí", labelEn: "About Me" },
+  { id: "contacto", labelEs: "Contacto", labelEn: "Contact" },
 ];
 ---
 
@@ -28,14 +28,24 @@ const sections = [
       {sections.map((s) => (
         <a
           href={`#${s.id}`}
-          class="text-xs font-medium px-3 py-1.5 rounded-full transition-colors duration-200 hover:text-white"
+          class="i18n text-xs font-medium px-3 py-1.5 rounded-full transition-colors duration-200 hover:text-white"
           style="color: var(--color-primary-dark);"
+          data-es={s.labelEs}
+          data-en={s.labelEn}
           onmouseover="this.style.background='var(--color-primary)';this.style.color='white'"
           onmouseout="this.style.background='transparent';this.style.color='var(--color-primary-dark)'"
         >
-          {s.label}
+          {s.labelEs}
         </a>
       ))}
+      <!-- Lang toggle in header -->
+      <button
+        class="lang-toggle text-xs font-bold px-3 py-1.5 rounded-full cursor-pointer ml-1"
+        style="background: var(--color-accent); color: white;"
+        aria-label="Switch language"
+      >
+        <span class="lang-label">EN</span>
+      </button>
     </div>
     <!-- Mobile hamburger -->
     <button
@@ -61,12 +71,20 @@ const sections = [
     {sections.map((s) => (
       <a
         href={`#${s.id}`}
-        class="mobile-nav-link block text-sm font-medium px-4 py-2.5 rounded-xl transition-colors duration-200"
+        class="mobile-nav-link i18n block text-sm font-medium px-4 py-2.5 rounded-xl transition-colors duration-200"
         style="color: var(--color-primary-dark);"
+        data-es={s.labelEs}
+        data-en={s.labelEn}
       >
-        {s.label}
+        {s.labelEs}
       </a>
     ))}
+    <button
+      class="lang-toggle block w-full text-sm font-bold px-4 py-2.5 rounded-xl mt-1 cursor-pointer text-center"
+      style="background: var(--color-accent); color: white;"
+    >
+      <span class="lang-label">EN</span>
+    </button>
   </div>
 </header>
 
@@ -75,17 +93,14 @@ const sections = [
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
 
-  let lastScroll = 0;
   window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y > 400) {
+    if (window.scrollY > 400) {
       header?.classList.remove('opacity-0', 'pointer-events-none');
       header?.classList.add('header-visible');
     } else {
       header?.classList.add('opacity-0', 'pointer-events-none');
       header?.classList.remove('header-visible');
     }
-    lastScroll = y;
   });
 
   mobileBtn?.addEventListener('click', () => {

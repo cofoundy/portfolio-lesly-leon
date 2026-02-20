@@ -4,15 +4,14 @@ import { siteConfig } from "../config";
 
 <footer id="contacto" class="py-16 md:py-20" style="background: var(--color-primary-dark);">
   <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="reveal text-2xl md:text-3xl font-bold text-white mb-4">
+    <h2 class="reveal text-2xl md:text-3xl font-bold text-white mb-4 i18n" data-es="Hablemos" data-en="Let's Talk">
       Hablemos
     </h2>
-    <p class="reveal stagger-1 text-sm mb-10" style="color: var(--color-primary-light);">
+    <p class="reveal stagger-1 text-sm mb-10 i18n" data-es="Estoy abierta a nuevas oportunidades y colaboraciones." data-en="I'm open to new opportunities and collaborations." style="color: var(--color-primary-light);">
       Estoy abierta a nuevas oportunidades y colaboraciones.
     </p>
 
     <div class="reveal stagger-2 flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-      <!-- Email -->
       <a
         href={`mailto:${siteConfig.social.email}`}
         class="inline-flex items-center gap-3 px-6 py-3 rounded-full text-sm font-semibold btn-hover"
@@ -25,7 +24,6 @@ import { siteConfig } from "../config";
         {siteConfig.social.email}
       </a>
 
-      <!-- LinkedIn -->
       <a
         href={siteConfig.social.linkedin}
         target="_blank"
@@ -40,7 +38,6 @@ import { siteConfig } from "../config";
       </a>
     </div>
 
-    <!-- Phone -->
     <p class="reveal stagger-3 text-sm" style="color: var(--color-primary-light); opacity: 0.7;">
       <svg class="inline w-4 h-4 mr-1 -mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
@@ -49,7 +46,7 @@ import { siteConfig } from "../config";
     </p>
 
     <div class="reveal stagger-4 mt-12 pt-8" style="border-top: 1px solid rgba(122, 156, 198, 0.2);">
-      <p class="text-xs" style="color: var(--color-primary-light); opacity: 0.5;">
+      <p class="text-xs i18n" data-es="© 2026 Lesly León Vásquez. Todos los derechos reservados." data-en="© 2026 Lesly León Vásquez. All rights reserved." style="color: var(--color-primary-light); opacity: 0.5;">
         &copy; 2026 Lesly León Vásquez. Todos los derechos reservados.
       </p>
     </div>

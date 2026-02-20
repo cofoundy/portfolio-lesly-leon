@@ -15,7 +15,8 @@ import { siteConfig } from "../config";
             <img
               src="/profile.jpg"
               alt={siteConfig.name}
-              class="w-full h-full object-cover object-top"
+              class="w-full h-full object-cover"
+              style="object-position: center 15%;"
               loading="eager"
             />
           </div>
@@ -38,11 +39,28 @@ import { siteConfig } from "../config";
           {siteConfig.title}
         </p>
 
-        <p class="hero-tagline mt-4 text-base md:text-lg max-w-md" style="color: var(--color-primary);">
+        <p class="hero-tagline mt-4 text-base md:text-lg max-w-md i18n" data-es="Construyo marcas que conectan con personas." data-en="I build brands that connect with people." style="color: var(--color-primary);">
           {siteConfig.tagline}
         </p>
 
-        <div class="hero-social mt-8 flex items-center gap-4 justify-center md:justify-start">
+        <!-- Language toggle -->
+        <div class="hero-social mt-4 flex items-center gap-2 justify-center md:justify-start">
+          <button
+            id="lang-toggle-hero"
+            class="lang-toggle inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border-2 btn-hover cursor-pointer"
+            style="border-color: var(--color-primary-light); color: var(--color-primary);"
+            aria-label="Switch language"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span class="lang-label">EN</span>
+          </button>
+        </div>
+
+        <div class="hero-social mt-6 flex items-center gap-4 justify-center md:justify-start">
           <a
             href={siteConfig.social.linkedin}
             target="_blank"

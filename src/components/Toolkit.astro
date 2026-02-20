@@ -2,6 +2,15 @@
 import { siteConfig } from "../config";
 const { toolkit } = siteConfig;
 
+const toolkitEn = [
+  { category: "Digital Ads", skills: ["Google Ads", "Meta Ads", "LinkedIn Ads", "SEM"] },
+  { category: "Branding & Content", skills: ["Corporate identity", "PR & Media", "Editorial content", "Canva / PS Express"] },
+  { category: "Social & Email", skills: ["Community management", "Email marketing", "Automation", "CRM (Salesforce, Eloqua)"] },
+  { category: "Analytics & Data", skills: ["Google Analytics", "GfK", "SPSS / R Studio", "SAP S3"] },
+  { category: "Events & BTL", skills: ["Trade shows", "B2B activations", "Partners & channel", "Retail promotions"] },
+  { category: "360° Strategy", skills: ["Operational marketing", "Benchmarking", "KPI reporting", "Agency management"] },
+];
+
 const iconPaths: Record<string, string> = {
   "chart-bar": "M3 3v18h18M7 16v-4M11 16V8M15 16v-6M19 16v-8",
   "palette": "M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.73-.63 1.93-1.53.12-.53-.02-1.08-.38-1.47l-.02-.03c-.36-.4-.5-.94-.38-1.47.2-.9 1-1.5 1.93-1.5H17c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9.5-8z M7.5 12a1.5 1.5 0 110-3 1.5 1.5 0 010 3z M10 8a1.5 1.5 0 110-3 1.5 1.5 0 010 3z M15 8a1.5 1.5 0 110-3 1.5 1.5 0 010 3z",
@@ -14,10 +23,10 @@ const iconPaths: Record<string, string> = {
 
 <section id="toolkit" class="py-16 md:py-24" style="background: var(--color-surface);">
   <div class="max-w-5xl mx-auto px-6">
-    <h2 class="reveal text-sm font-bold uppercase tracking-widest mb-3" style="color: var(--color-accent);">
+    <h2 class="reveal text-sm font-bold uppercase tracking-widest mb-3 i18n" data-es="Mi Toolkit" data-en="My Toolkit" style="color: var(--color-accent);">
       Mi Toolkit
     </h2>
-    <p class="reveal stagger-1 text-base mb-10" style="color: var(--color-primary);">
+    <p class="reveal stagger-1 text-base mb-10 i18n" data-es="Las herramientas y competencias que definen mi enfoque en marketing." data-en="The tools and competencies that define my marketing approach." style="color: var(--color-primary);">
       Las herramientas y competencias que definen mi enfoque en marketing.
     </p>
 
@@ -27,44 +36,25 @@ const iconPaths: Record<string, string> = {
           class={`reveal stagger-${(i % 6) + 1} rounded-xl p-5 card-hover group`}
           style="background: white; border: 1px solid rgba(61, 90, 128, 0.1);"
         >
-          <!-- Icon -->
-          <div
-            class="w-10 h-10 rounded-lg flex items-center justify-center mb-4 icon-hover"
-            style="background: var(--color-primary-dark);"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4 icon-hover" style="background: var(--color-primary-dark);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d={iconPaths[item.icon] || iconPaths["strategy"]} />
             </svg>
           </div>
 
-          <!-- Category name -->
-          <h3 class="text-base font-bold mb-3" style="color: var(--color-primary-dark);">
+          <h3 class="text-base font-bold mb-3 i18n" data-es={item.category} data-en={toolkitEn[i].category} style="color: var(--color-primary-dark);">
             {item.category}
           </h3>
 
-          <!-- Accent bar -->
           <div class="w-full h-0.5 rounded-full mb-4 overflow-hidden" style="background: var(--color-surface);">
-            <div
-              class="bar-fill h-full rounded-full"
-              style="background: linear-gradient(90deg, var(--color-accent), var(--color-primary-light));"
-            ></div>
+            <div class="bar-fill h-full rounded-full" style="background: linear-gradient(90deg, var(--color-accent), var(--color-primary-light));"></div>
           </div>
 
-          <!-- Sub-skills -->
           <ul class="space-y-1.5">
-            {item.skills.map((skill) => (
+            {item.skills.map((skill, si) => (
               <li class="flex items-center gap-2 text-sm" style="color: #555;">
                 <span class="w-1 h-1 rounded-full flex-shrink-0" style="background: var(--color-accent);"></span>
-                {skill}
+                <span class="i18n" data-es={skill} data-en={toolkitEn[i].skills[si]}>{skill}</span>
               </li>
             ))}
           </ul>
