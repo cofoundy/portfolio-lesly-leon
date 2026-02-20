@@ -1,0 +1,134 @@
+% Harvard-Format Professional CV — Lesly León Vásquez
+% Compile with: xelatex cv-leon.tex
+
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=0.6in, top=0.5in, bottom=0.5in]{geometry}
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+% --- Fonts ---
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+% --- Colors ---
+\definecolor{headrule}{HTML}{2c3e50}
+\definecolor{linkblue}{HTML}{1a5276}
+
+% --- Hyperlinks ---
+\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue, pdfborder={0 0 0}}
+
+% --- Section Formatting ---
+\titleformat{\section}
+  {\large\bfseries\centering}
+  {}
+  {0em}
+  {\vspace{-0.4em}\hrulefill\quad}[\quad\hrulefill\vspace{-0.4em}]
+\titlespacing{\section}{0pt}{0.6em}{0.3em}
+
+% --- List Formatting ---
+\setlist[itemize]{nosep, left=0pt, label=\textbullet, itemsep=1pt, topsep=2pt}
+
+% --- No page numbers ---
+\pagestyle{empty}
+
+% --- Custom Commands ---
+\newcommand{\entry}[4]{%
+  \noindent\textbf{#1} \hfill #2 \par\nopagebreak
+  \textit{#3} \hfill \textit{#4} \par\nopagebreak
+}
+
+\begin{document}
+
+% ============================================
+% HEADER
+% ============================================
+\begin{center}
+  {\LARGE\bfseries Lesly León Vásquez} \\[4pt]
+  \faIcon{map-marker-alt}\enspace Pamplona, Navarra, España
+  \quad\faIcon{envelope}\enspace \href{mailto:lesly.leon21@gmail.com}{lesly.leon21@gmail.com}
+  \quad\faIcon{phone}\enspace +34 655 753 135
+  \\[2pt]
+  \faIcon{linkedin}\enspace \href{https://linkedin.com/in/leslyleon}{linkedin.com/in/leslyleon}
+  \quad\faIcon{globe}\enspace \href{https://lesly-leon.cofoundy.dev}{lesly-leon.cofoundy.dev}
+\end{center}
+
+\vspace{-0.4em}
+\noindent\rule{\textwidth}{0.8pt}
+\vspace{-0.8em}
+
+% ============================================
+% EXPERIENCE
+% ============================================
+\section{Experiencia Profesional}
+
+\entry{LG Electronics España}{Madrid, España}{Gestor de Marca (Brand Marketing Manager) — División B2B}{Mar 2023 -- Presente}
+\begin{itemize}
+  \item Gestiona campañas SEM, social ads y email marketing en Meta, Google y LinkedIn, optimizando KPIs de alcance, interacción y ROI para la división B2B
+  \item Supervisa la creación de contenidos para medios, redes sociales y PR, alineando cada pieza con la estrategia corporativa de LG España
+  \item Optimiza bases de datos, segmentación y estrategias CRM mediante Salesforce y Eloqua, mejorando la eficacia de campañas dirigidas al canal B2B
+  \item Coordina eventos corporativos con clientes, partners y canal de ventas B2B, fortaleciendo relaciones comerciales clave
+  \item Elabora informes de resultados con métricas de alcance, interacción y retorno de inversión para la toma de decisiones estratégicas
+\end{itemize}
+\vspace{0.3em}
+
+\entry{LG Electronics España}{Madrid, España}{Brand Marketing Manager — División B2C}{Ago 2022 -- Mar 2023}
+\begin{itemize}
+  \item Dirigió campañas 360° integrando canales digitales (RRSS, SEM, emailing) y medios tradicionales (TV, radio, BTL) para posicionar productos B2C en el mercado español
+  \item Coordinó lanzamientos de nuevos productos junto a los equipos de ventas y producto, desarrollando materiales para retail y e-commerce
+  \item Elaboró análisis de mercado, desempeño y tendencias utilizando herramientas GfK para informar la estrategia comercial
+  \item Diseñó acciones comerciales y promociones para clientes y la red de ventas, impulsando la rotación de productos en punto de venta
+\end{itemize}
+\vspace{0.3em}
+
+\entry{Menta Innovations}{España}{Especialista de Marketing B2B y B2C}{Mar 2021 -- Sep 2022}
+\begin{itemize}
+  \item Coordinó campañas comerciales multicanal dirigidas tanto al canal de distribución como al cliente final
+  \item Implementó estrategias de lead generation y CRM (Eloqua, Salesforce), optimizando el funnel de conversión comercial
+  \item Organizó eventos, ferias y actividades comerciales, fortaleciendo la presencia de marca ante partners y clientes
+  \item Realizó benchmarking competitivo y análisis de producto para identificar oportunidades de diferenciación
+\end{itemize}
+\vspace{0.3em}
+
+\entry{LG Electronics España SA}{Madrid, España}{Prácticas de Marketing B2B}{Mar 2019 -- May 2020}
+\begin{itemize}
+  \item Colaboró en la ejecución de campañas on/offline, gestionando eventos y actividades comerciales para la división B2B
+  \item Desarrolló materiales de marketing y contenidos, apoyando el calendario de redes sociales, PR y comunicación interna
+\end{itemize}
+\vspace{0.3em}
+
+% ============================================
+% EDUCATION
+% ============================================
+\section{Educación}
+
+\entry{Universidad de Deusto (DBS)}{San Sebastián, España}{Máster en Marketing Avanzado}{2018 -- 2019}
+\vspace{0.3em}
+
+\entry{Escuela de Negocios y Dirección (UEMC)}{Madrid, España}{Curso de Especialización en Dirección de Marketing}{2019 -- 2020}
+\vspace{0.3em}
+
+\entry{Universidad Pública de Navarra (UPNA)}{Pamplona, España}{Grado en Administración y Dirección de Empresas}{2013 -- 2018}
+\vspace{0.3em}
+
+\noindent\textit{Seminario: Habilidades Directivas y Gestión de Equipos} \hfill \textit{Femxa (65 horas)}
+\vspace{0.3em}
+
+% ============================================
+% SKILLS
+% ============================================
+\section{Conocimientos y Habilidades}
+
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\textbf{Marketing Digital:} & Google Ads, Meta Ads, LinkedIn Ads, SEO/SEM, Email Marketing, Automatización \\
+\textbf{Herramientas:} & Salesforce, Eloqua, Google Analytics, GfK, SPSS, R Studio, SAP S3, Canva, PS Express \\
+\textbf{Competencias:} & Branding, Identidad Corporativa, Gestión de Agencias, Comunicación Corporativa, PR, Gestión de Eventos \\
+\textbf{Idiomas:} & Español (nativo), Inglés (intermedio, Cambridge B2) \\
+\end{tabularx}
+
+\end{document}
