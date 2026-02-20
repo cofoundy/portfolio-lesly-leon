@@ -1,0 +1,56 @@
+---
+import { siteConfig } from "../config";
+const { perfil } = siteConfig;
+---
+
+<section id="perfil" class="py-16 md:py-24" style="background: var(--color-surface);">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="reveal text-sm font-bold uppercase tracking-widest mb-8" style="color: var(--color-accent);">
+      Perfil
+    </h2>
+
+    <div class="reveal stagger-1">
+      <p class="text-lg md:text-xl leading-relaxed" style="color: var(--color-primary-dark);">
+        {perfil.intro}
+      </p>
+    </div>
+
+    <div class="reveal stagger-2 mt-8">
+      <p class="text-base leading-relaxed" style="color: #555;">
+        {perfil.detalle}
+      </p>
+    </div>
+
+    <!-- Pull quote -->
+    <div class="reveal stagger-3 mt-10">
+      <blockquote
+        class="quote-float relative pl-6 py-4 border-l-4"
+        style="border-color: var(--color-accent);"
+      >
+        <p class="text-lg md:text-xl italic font-medium" style="color: var(--color-primary);">
+          &ldquo;{perfil.quote.text}&rdquo;
+        </p>
+        <cite class="mt-3 block text-sm font-semibold not-italic" style="color: var(--color-accent);">
+          — {perfil.quote.author}
+        </cite>
+      </blockquote>
+    </div>
+
+    <!-- Languages -->
+    <div class="reveal stagger-4 mt-10 flex flex-wrap gap-3">
+      {siteConfig.idiomas.map((lang) => (
+        <span
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
+          style="background: white; color: var(--color-primary-dark); border: 1px solid var(--color-primary-light);"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          {lang.idioma} — {lang.nivel}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>

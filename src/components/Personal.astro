@@ -1,0 +1,57 @@
+---
+import { siteConfig } from "../config";
+const { personal } = siteConfig;
+
+const personalIcons: Record<string, string> = {
+  "globe": "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z",
+  "spark": "M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z",
+  "compass": "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z",
+  "book": "M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5V4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5z",
+};
+---
+
+<section id="personal" class="py-16 md:py-24" style="background: var(--color-surface);">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="reveal text-sm font-bold uppercase tracking-widest mb-3" style="color: var(--color-accent);">
+      Más Allá del Marketing
+    </h2>
+    <p class="reveal stagger-1 text-base mb-10" style="color: var(--color-primary);">
+      Lo que me define fuera de la oficina.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      {personal.map((item, i) => (
+        <div
+          class={`reveal-scale stagger-${i + 1} rounded-xl p-6 card-hover`}
+          style="background: white; border: 1px solid rgba(212, 132, 90, 0.15);"
+        >
+          <!-- Icon circle -->
+          <div
+            class="w-12 h-12 rounded-full flex items-center justify-center mb-4"
+            style="background: linear-gradient(135deg, var(--color-accent), var(--color-primary-light)); opacity: 0.9;"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d={personalIcons[item.icon] || personalIcons["spark"]} />
+            </svg>
+          </div>
+
+          <h3 class="text-base font-bold mb-2" style="color: var(--color-primary-dark);">
+            {item.titulo}
+          </h3>
+          <p class="text-sm leading-relaxed" style="color: #666;">
+            {item.descripcion}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
