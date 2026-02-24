@@ -13,7 +13,7 @@ export const siteConfig = {
     surfaceLight: "#FAF9F7",
   },
 
-  tagline: "Construyo marcas que conectan con personas.",
+  tagline: "Construyo marcas que conectan.",
 
   social: {
     email: "lesly.leon21@gmail.com",
@@ -22,8 +22,7 @@ export const siteConfig = {
   },
 
   perfil: {
-    intro: "Brand Manager con más de 3 años de experiencia en marketing 360°, gestión de marca, desarrollo de campañas on/offline y coordinación con equipos multidisciplinares en entornos B2B y B2C.",
-    detalle: "He gestionado campañas digitales y tradicionales, comunicación corporativa, eventos, SEO/SEM, redes sociales, analítica, generación de contenidos y branding. Destaco por mi proactividad, creatividad y capacidad de planificación, así como por mi experiencia coordinando diferentes departamentos — ventas, producto, digital y agencias externas.",
+    intro: "Brand Manager con más de 5 años de experiencia en marketing 360°, gestión de marca, desarrollo de campañas on/offline y coordinación con equipos multidisciplinares en entornos B2B y B2C.",
     quote: {
       text: "Busco aportar estrategias de valor en una empresa dinámica donde pueda seguir creciendo.",
       author: "Lesly León Vásquez",
@@ -34,7 +33,7 @@ export const siteConfig = {
     {
       empresa: "LG Electronics España",
       division: "División B2B",
-      cargo: "Gestor de Marca (Brand Marketing Manager)",
+      cargo: "Brand Marketing Manager",
       periodo: "Mar 2023 – Actualidad",
       actual: true,
       bullets: [
@@ -72,7 +71,7 @@ export const siteConfig = {
       ],
     },
     {
-      empresa: "LG Electronics España SA",
+      empresa: "LG Electronics España",
       division: "",
       cargo: "Prácticas Marketing B2B",
       periodo: "Mar 2019 – May 2020",
@@ -120,12 +119,6 @@ export const siteConfig = {
 
   formacion: [
     {
-      ciudad: "Pamplona",
-      institucion: "Universidad Pública de Navarra (UPNA)",
-      titulo: "Grado en Administración y Dirección de Empresas",
-      periodo: "2013 – 2018",
-    },
-    {
       ciudad: "San Sebastián",
       institucion: "Universidad de Deusto (DBS)",
       titulo: "Máster en Marketing Avanzado",
@@ -136,6 +129,12 @@ export const siteConfig = {
       institucion: "Escuela de Negocios y Dirección (UEMC)",
       titulo: "Especialización en Dirección de Marketing",
       periodo: "2019 – 2020",
+    },
+    {
+      ciudad: "Pamplona",
+      institucion: "Universidad Pública de Navarra (UPNA)",
+      titulo: "Grado en Administración y Dirección de Empresas",
+      periodo: "2013 – 2018",
     },
   ],
 
@@ -164,6 +163,6 @@ export const siteConfig = {
 
   idiomas: [
     { idioma: "Español", nivel: "Nativo" },
-    { idioma: "Inglés", nivel: "Intermedio (Cambridge B2)" },
+    { idioma: "Inglés", nivel: "Intermedio Alto (Cambridge B2)" },
   ],
 };
