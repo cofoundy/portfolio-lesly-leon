@@ -5,18 +5,24 @@ import { siteConfig } from "../config";
 <section id="hero" class="min-h-[90vh] flex items-center" style="background: var(--color-surface-light);">
   <div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
     <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-      <!-- Avatar -->
+      <!-- Photo -->
       <div class="hero-photo flex-shrink-0">
         <div class="relative">
           <div
-            class="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden shadow-xl flex items-center justify-center"
-            style="border: 3px solid var(--color-primary-light); background: var(--color-primary);"
+            class="w-56 h-72 md:w-72 md:h-[22rem] rounded-2xl overflow-hidden shadow-xl"
+            style="border: 3px solid var(--color-primary-light);"
           >
-            <span class="text-7xl md:text-8xl font-extrabold text-white select-none" style="font-family: 'Plus Jakarta Sans', sans-serif;">LL</span>
+            <img
+              src="/profile.jpg"
+              alt={siteConfig.name}
+              class="w-full h-full object-cover"
+              style="object-position: center 20%;"
+              loading="eager"
+            />
           </div>
           <!-- Decorative accent corner -->
           <div
-            class="absolute -bottom-3 -right-3 w-16 h-16 rounded-full -z-10"
+            class="absolute -bottom-3 -right-3 w-16 h-16 rounded-xl -z-10"
             style="background: var(--color-accent); opacity: 0.3;"
           ></div>
         </div>
