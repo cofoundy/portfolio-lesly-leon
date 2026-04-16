@@ -18,7 +18,6 @@ export const siteConfig = {
   social: {
     email: "lesly.leon21@gmail.com",
     linkedin: "https://linkedin.com/in/leslyleon",
-    phone: "+34655753135",
   },
 
   perfil: {
